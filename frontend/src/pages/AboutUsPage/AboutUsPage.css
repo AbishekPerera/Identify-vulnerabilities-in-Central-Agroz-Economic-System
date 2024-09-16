@@ -1,0 +1,41 @@
+/* ----------------------------------------------------
+    Breadcurmb Area
+---------------------------------------------------- */
+.ltn__breadcrumb-area-aboutuspage {
+  background-color: #f4f4f4;
+  margin-bottom: 120px;
+  padding-top: 110px;
+  padding-bottom: 110px;
+  background-image: url(../../img/other\ comp/aboutusbanner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.ltn__breadcrumb-list ul {
+  margin: 0;
+  padding: 0;
+}
+
+.ltn__breadcrumb-list ul li {
+  display: inline-block;
+  margin-right: 30px;
+  position: relative;
+  font-weight: 700;
+}
+.AboutUsimg {
+  width: 70%;
+  height: 80%;
+  background-image: url(../../img/other\ comp/aboutusbanner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.BackgroundAboutUs {
+  /* background-image: url(https://i.pinimg.com/564x/5d/c6/6c/5dc66c4ebe821b2645e4915703ea05a0.jpg); */
+  background-image: url(https://w0.peakpx.com/wallpaper/987/137/HD-wallpaper-green-cabbage-macro-vegetables-textures-cabbage-textures-cabbage-leaves-fresh-vegetables-cabbage-vegetables.jpg);
+  background-repeat: cover;
+  height: 1100px;
+  
+}

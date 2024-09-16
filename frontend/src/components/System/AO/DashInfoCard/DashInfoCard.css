@@ -1,0 +1,15 @@
+/* .cardIcon {
+  height: 100px;
+  width: 100px;
+} */
+
+.cardDashAO {
+  padding: 20px;
+  /* background-color: rgb(235, 226, 226); */
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background-color: rgb(218 237 250 / 83%);
+}
+
+.cardTopic {
+  text-align: center;
+}
