@@ -5,7 +5,7 @@
   "dependencies": {
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "axios": "^1.4.0",
+    "axios": "^1.7.4",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.5",
     "jquery": "^3.6.4",
