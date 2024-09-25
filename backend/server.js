@@ -25,6 +25,20 @@ dotenv.config();
 
 const URL = process.env.MONGODB_URL;
 
+// Add X-Content-Type-Options Header Middleware
+app.use((req, res, next) => {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  next();
+});
+
+app.use((req, res, next) => {
+  res.setHeader('X-Frame-Options', 'DENY');
+  next();
+});
+
+// Disable etag headers for security
+app.disable('etag');
+
 mongoose
   .connect(URL, {
     useNewUrlParser: true,
