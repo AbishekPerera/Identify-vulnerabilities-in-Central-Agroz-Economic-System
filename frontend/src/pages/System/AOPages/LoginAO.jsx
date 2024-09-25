@@ -108,6 +108,13 @@ const LoginAO = () => {
                       Login
                     </button>
                   </form>
+                  {/* link to /auth/google */}
+                  <a
+                    href='http://localhost:8075/auth/google'
+                    class='btn btn-danger btn-block mb-4 w-100'
+                  >
+                    Login with Google
+                  </a>
                 </div>
               </div>
             </div>
