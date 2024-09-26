@@ -56,14 +56,23 @@ const DashboardECMO = () => {
           const key = `${Category}-${Type}`;
 
           // Retrieve or create categoryData object for the Category
-          const categoryData = updatedAvailableQuantitiesByCategory[
-            Category
-          ] || {
-            category: Category,
-            boughtQuantity: 0,
-            soldQuantity: 0,
-            availableQuantity: 0,
-          };
+          // const categoryData = updatedAvailableQuantitiesByCategory[
+          //   Category
+          // ] || {
+          //   category: Category,
+          //   boughtQuantity: 0,
+          //   soldQuantity: 0,
+          //   availableQuantity: 0,
+          // };
+          const categoryData =
+            updatedAvailableQuantitiesByCategory.hasOwnProperty(Category)
+              ? updatedAvailableQuantitiesByCategory[Category]
+              : {
+                  category: Category,
+                  boughtQuantity: 0,
+                  soldQuantity: 0,
+                  availableQuantity: 0,
+                };
 
           // Update the quantities based on the Role
           if (Role === "Seller") {
@@ -89,10 +98,45 @@ const DashboardECMO = () => {
           }
 
           // Update the report data based on the categoryData quantities
-          updatedReportData[key].boughtQuantity += categoryData.boughtQuantity;
-          updatedReportData[key].soldQuantity += categoryData.soldQuantity;
-          updatedReportData[key].availableQuantity +=
-            categoryData.availableQuantity;
+          // updatedReportData[key].boughtQuantity += categoryData.boughtQuantity;
+          // updatedReportData[key].soldQuantity += categoryData.soldQuantity;
+          // updatedReportData[key].availableQuantity +=
+          //   categoryData.availableQuantity;
+          if (updatedReportData.hasOwnProperty(key)) {
+            // Ensure boughtQuantity is a valid number before adding
+            if (
+              typeof updatedReportData[key].boughtQuantity === "number" &&
+              typeof categoryData.boughtQuantity === "number"
+            ) {
+              updatedReportData[key].boughtQuantity +=
+                categoryData.boughtQuantity;
+            } else {
+              console.error("Invalid boughtQuantity value");
+            }
+
+            // Ensure soldQuantity is a valid number before adding
+            if (
+              typeof updatedReportData[key].soldQuantity === "number" &&
+              typeof categoryData.soldQuantity === "number"
+            ) {
+              updatedReportData[key].soldQuantity += categoryData.soldQuantity;
+            } else {
+              console.error("Invalid soldQuantity value");
+            }
+
+            // Ensure availableQuantity is a valid number before adding
+            if (
+              typeof updatedReportData[key].availableQuantity === "number" &&
+              typeof categoryData.availableQuantity === "number"
+            ) {
+              updatedReportData[key].availableQuantity +=
+                categoryData.availableQuantity;
+            } else {
+              console.error("Invalid availableQuantity value");
+            }
+          } else {
+            console.error("Invalid key access in updatedReportData");
+          }
         });
       });
 

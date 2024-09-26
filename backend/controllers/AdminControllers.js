@@ -141,8 +141,9 @@ export const loginAdmin = async (req, res) => {
   try {
     const existingAdmin = await Admin.findOne({ email });
 
+    // Generic error message, regardless of whether the email or password is incorrect
     if (!existingAdmin) {
-      return res.status(404).json({ message: "Admin doesn't exist." });
+      return res.status(400).json({ message: "Invalid credentials." });
     }
 
     const isPasswordCorrect = await bcrypt.compare(
@@ -150,6 +151,7 @@ export const loginAdmin = async (req, res) => {
       existingAdmin.password
     );
 
+    // Same generic error message for incorrect password
     if (!isPasswordCorrect) {
       return res.status(400).json({ message: "Invalid credentials." });
     }
@@ -176,3 +178,4 @@ export const loginAdmin = async (req, res) => {
     res.status(500).json({ message: "Something went wrong." });
   }
 };
+

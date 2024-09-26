@@ -73,10 +73,27 @@ const QunatityModal = ({ centerName }) => {
             report[key] = { boughtQuantity: 0, soldQuantity: 0 };
           }
 
-          if (Role === "Seller") {
-            report[key].boughtQuantity += Quantity;
-          } else if (Role === "Buyer") {
-            report[key].soldQuantity += Quantity;
+          // if (Role === "Seller") {
+          //   report[key].boughtQuantity += Quantity;
+          // } else if (Role === "Buyer") {
+          //   report[key].soldQuantity += Quantity;
+          // }
+          if (report.hasOwnProperty(key)) {
+            if (Role === "Seller") {
+              if (typeof report[key].boughtQuantity === "number") {
+                report[key].boughtQuantity += Quantity;
+              } else {
+                console.error("boughtQuantity is not a valid number");
+              }
+            } else if (Role === "Buyer") {
+              if (typeof report[key].soldQuantity === "number") {
+                report[key].soldQuantity += Quantity;
+              } else {
+                console.error("soldQuantity is not a valid number");
+              }
+            }
+          } else {
+            console.error("Invalid key access");
           }
         });
       });

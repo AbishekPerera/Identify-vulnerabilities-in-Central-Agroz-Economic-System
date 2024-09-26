@@ -3,6 +3,7 @@ import axios from "axios";
 import "./Styles/PriceList.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import DOMPurify from "dompurify";
 
 const PriceModal = ({ centerName }) => {
   const [prices, setPrices] = useState([]);
@@ -171,8 +172,12 @@ const PriceModal = ({ centerName }) => {
                         <tr key={price._id}>
                           <td className="selling-price-cell">{price.Type}</td>
                           <td className="selling-price-cell">
-                            <img
+                            {/*<img
                               src={price.Image}
+                              style={{ width: "50px", height: "50px" }}
+                            />*/}
+                            <img
+                              src={DOMPurify.sanitize(price.Image)}
                               style={{ width: "50px", height: "50px" }}
                             />
                           </td>

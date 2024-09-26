@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import axios from "axios";
 import swal from "sweetalert";
+import DOMPurify from "dompurify";
 
 const AddAgriOfficerAdmin = () => {
   // {
@@ -290,8 +291,13 @@ const AddAgriOfficerAdmin = () => {
                   </Col>
                   <Col>
                     <div className="agri-officer-update-profile-picure text-center">
-                      <img
+                      {/* <img
                         src={image}
+                        alt="profile-pic"
+                        style={{ width: "250px", height: "250px" }}
+                      /> */}
+                      <img
+                        src={DOMPurify.sanitize(image)}
                         alt="profile-pic"
                         style={{ width: "250px", height: "250px" }}
                       />
