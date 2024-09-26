@@ -6,6 +6,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { Col, Form, Row } from "react-bootstrap";
 import axios from "axios";
 import swal from "sweetalert";
+import DOMPurify from "dompurify";
 
 const AgriOfficerUpdateAdmin = () => {
   const districts = [
@@ -265,8 +266,13 @@ const AgriOfficerUpdateAdmin = () => {
                 </Col>
                 <Col lg={6}>
                   <div className="agri-officer-update-profile-picure text-center">
-                    <img
+                    {/* <img
                       src={image}
+                      alt="profile-pic"
+                      style={{ width: "250px", height: "250px" }}
+                    /> */}
+                    <img
+                      src={DOMPurify.sanitize(image)}
                       alt="profile-pic"
                       style={{ width: "250px", height: "250px" }}
                     />

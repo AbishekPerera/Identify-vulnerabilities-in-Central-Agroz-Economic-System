@@ -13,11 +13,17 @@
   "dependencies": {
     "bcrypt": "^5.1.0",
     "bcryptjs": "^2.4.3",
+    "braces": "^3.0.3",
     "cors": "^2.8.5",
+    "csurf": "^1.10.0",
     "dotenv": "^16.0.3",
     "express": "^4.21.0",
+    "helmet": "^7.1.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.0.0",
-    "nodemon": "^3.0.0"
+    "nodemon": "^3.0.0",
+    "npm-force-resolutions": "^0.0.10",
+    "semver": "^6.3.1",
+    "tar": "^6.2.1"
   }
 }

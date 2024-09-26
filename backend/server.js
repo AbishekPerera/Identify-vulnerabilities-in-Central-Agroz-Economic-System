@@ -11,12 +11,23 @@ import Stock from "./routes/ECMOroutes/stock.js";
 import priceList from "./routes/ECMOroutes/PriceList.js";
 import AORoutes from "./routes/AORoutes.js";
 import AdminRoutes from "./routes/AdminRoutes.js";
+import helmet from "helmet";
+import csurf from "csurf";
 
 const app = express();
 
 const PORT = process.env.PORT || 8075;
 app.use(cors());
 app.use(bodyParser.json());
+
+//newly added
+// Apply Helmet for security headers
+app.use(helmet());
+
+// Apply CSRF protection
+app.use(cookieParser());
+const csrfProtection = csurf({ cookie: true });
+app.use(csrfProtection);
 
 dotenv.config();
 

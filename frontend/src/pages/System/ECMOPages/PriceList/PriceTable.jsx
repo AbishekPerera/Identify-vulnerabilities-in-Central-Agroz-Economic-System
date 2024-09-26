@@ -9,6 +9,7 @@ import NavBar from "../../../../components/System/ECMO/NavBar/NavBar";
 import SystemFooter from "../../../../components/System/ECMO/Footer/SystemFooter";
 import axios from "axios";
 import swal from "sweetalert";
+import DOMPurify from "dompurify";
 
 const PriceTable = () => {
   //get data from local storage as a string
@@ -164,7 +165,8 @@ const PriceTable = () => {
                     >
                       <div class="item">
                         {/* <div className="itemImg"> */}
-                        <img src={priceData.Image} />
+                        {/* <img src={priceData.Image} /> */}
+                        <img src={DOMPurify.sanitize(priceData.Image)}/>
                         {/* </div> */}
                         <ul class="d-flex align-items-center justify-content-center list-unstyled icons">
                           <li
