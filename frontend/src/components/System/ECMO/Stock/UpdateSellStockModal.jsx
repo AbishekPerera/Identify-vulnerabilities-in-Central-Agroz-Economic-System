@@ -56,10 +56,27 @@ const UpdateSellStockModal = ({ show, handleClose, setIsStockUpdated, id }) => {
             acc[key] = { boughtQuantity: 0, soldQuantity: 0 };
           }
 
-          if (Role === "Seller") {
-            acc[key].boughtQuantity += Quantity;
-          } else if (Role === "Buyer") {
-            acc[key].soldQuantity += Quantity;
+          // if (Role === "Seller") {
+          //   acc[key].boughtQuantity += Quantity;
+          // } else if (Role === "Buyer") {
+          //   acc[key].soldQuantity += Quantity;
+          // }
+          if (acc.hasOwnProperty(key)) {
+            if (Role === "Seller") {
+              if (typeof acc[key].boughtQuantity === "number") {
+                acc[key].boughtQuantity += Quantity;
+              } else {
+                console.error("boughtQuantity is not a valid number");
+              }
+            } else if (Role === "Buyer") {
+              if (typeof acc[key].soldQuantity === "number") {
+                acc[key].soldQuantity += Quantity;
+              } else {
+                console.error("soldQuantity is not a valid number");
+              }
+            }
+          } else {
+            console.error("Invalid key access");
           }
         });
         setReportData(acc);

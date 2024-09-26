@@ -5,6 +5,7 @@ import SystemFooter from "../../../components/System/Admin/Footer/SystemFooter";
 import "./styles/DashboardAdmin.css";
 import { Link, useNavigate } from "react-router-dom";
 import { Button, Col, Form, Row } from "react-bootstrap";
+import DOMPurify from "dompurify";
 
 const ProfileAdmin = () => {
   const [adminData, setAdminData] = useState();
@@ -38,8 +39,13 @@ const ProfileAdmin = () => {
             <br />
             <Form>
               <div className="agri-officer-update-profile-picure text-center">
-                <img
+                {/* <img
                   src={adminData?.admin.image}
+                  alt="profile-pic"
+                  style={{ width: "250px", height: "250px" }}
+                /> */}
+                <img
+                  src={DOMPurify.sanitize(adminData?.admin.image)}
                   alt="profile-pic"
                   style={{ width: "250px", height: "250px" }}
                 />

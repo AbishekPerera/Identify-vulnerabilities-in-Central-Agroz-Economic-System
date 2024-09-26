@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import axios from "axios";
 import swal from "sweetalert";
+import DOMPurify from "dompurify";
 
 const ViewPriceModal = ({ show, handleClose, id }) => {
   const [price, setPrice] = useState({
@@ -39,7 +40,13 @@ const ViewPriceModal = ({ show, handleClose, id }) => {
       <Modal.Body>
         <div className="container">
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <img src={price.Image} alt="Price" width="200px" height="150px" />
+            {/* <img src={price.Image} alt="Price" width="200px" height="150px" /> */}
+            <img
+              src={DOMPurify.sanitize(price.Image)}
+              alt="Price"
+              width="200px"
+              height="150px"
+            />
           </div>
 
           <table class="table table-striped table-hover">
