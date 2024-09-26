@@ -58,19 +58,19 @@ const ProfileAO = () => {
                         <h6>Name : {aoName} </h6>
                       </div>
 
-                      <div class='col-md-12 pb-3'>
+                      {/* <div class='col-md-12 pb-3'>
                         <h6>District : {district} </h6>
                       </div>
 
                       <div class='col-md-12 pb-3'>
                         <h6>Province : {province} </h6>
-                      </div>
+                      </div> */}
 
                       <div class='col-md-12 pb-3'>
                         <h6>Email : {email} </h6>
                       </div>
 
-                      <div class='col-md-12 pb-3'>
+                      {/* <div class='col-md-12 pb-3'>
                         <h6>Contact Number : {contact} </h6>
                       </div>
 
@@ -80,7 +80,7 @@ const ProfileAO = () => {
 
                       <div class='col-md-12 pb-3'>
                         <h6>Grama Niladhari Division : {gramaNiladariDivision} </h6>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                   <div className='profileEditAO'>
