@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^5.1.0",
+    "bcrypt": "^6.0.0",
     "bcryptjs": "^2.4.3",
     "braces": "^3.0.3",
     "cors": "^2.8.5",
@@ -27,6 +27,6 @@
     "passport-google-oauth2": "^0.2.0",
     "npm-force-resolutions": "^0.0.10",
     "semver": "^6.3.1",
-    "tar": "^6.2.1"
+    "tar": "^7.5.4"
   }
 }
